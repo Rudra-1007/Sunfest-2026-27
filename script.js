@@ -1,0 +1,13 @@
+const nav=document.querySelector('.nav'), bar=document.querySelector('.progress span'), menu=document.querySelector('.menu-btn');
+menu.addEventListener('click',()=>{nav.classList.toggle('open');const open=nav.classList.contains('open');menu.setAttribute('aria-expanded',open);document.body.classList.toggle('menu-open',open)});
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');document.body.classList.remove('menu-open');menu.setAttribute('aria-expanded','false')}));
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+reveals.forEach(el=>io.observe(el));
+let counted=false;
+const heroStats=document.querySelector('.hero-stats');
+new IntersectionObserver(([e])=>{if(e.isIntersecting&&!counted){counted=true;document.querySelectorAll('[data-count]').forEach(el=>{let n=0,end=+el.dataset.count;const t=setInterval(()=>{el.textContent=++n;if(n>=end)clearInterval(t)},180)})}},{threshold:.5}).observe(heroStats);
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';nav.classList.toggle('scrolled',scrollY>30)});
+const glow=document.querySelector('.cursor-glow');
+addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+document.querySelectorAll('.component,.big-card,.tech-card,.eff-card').forEach(card=>card.addEventListener('pointermove',e=>{if(innerWidth<800)return;const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(700px) rotateX(${-y*3}deg) rotateY(${x*3}deg) translateY(-3px)`}).addEventListener('pointerleave',()=>card.style.transform=''));
