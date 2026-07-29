@@ -1,255 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07090d" />
-  <meta name="description" content="Hybrid Energy-Generating Smart Speed Breaker — a student engineering model combining piezoelectric and rack-and-pinion energy harvesting." />
-  <title>Hybrid Energy-Generating Smart Speed Breaker</title>
+  <meta name="theme-color" content="#05080f" />
+  <meta name="description" content="AI camera-based human detection security robot by Rudra Pandey and Devansh Pandey, XI Science, Sunbeam School Ayodhya." />
+  <title>HumanGuard AI | Sunbeam School Ayodhya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-  <header class="nav">
-    <a class="brand school-brand" href="#home"><img src="assets/sunbeam-school-ayodhya.png" alt="Sunbeam School Ayodhya logo"><span><b>SUNBEAM</b><small>SCHOOL AYODHYA</small></span></a>
-    <button class="menu-btn" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
-    <nav>
-      <a href="#overview">Overview</a>
+  <header class="nav" id="nav">
+    <a class="brand" href="#home" aria-label="Home">
+      <img src="sunbeam-school-ayodhya.png" alt="Sunbeam School Ayodhya emblem">
+      <span><b>Sunbeam School</b><small>Ayodhya • XI Science</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav id="navLinks">
+      <a href="#about">About</a>
       <a href="#working">Working</a>
       <a href="#components">Components</a>
-      <a href="#build">Build</a>
       <a href="#impact">Impact</a>
+      <a href="#team">Team</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero section" id="home">
-      <div class="hero-grid"></div>
-      <div class="orb orb-a"></div><div class="orb orb-b"></div>
+    <section class="hero" id="home">
+      <div class="grid-bg"></div>
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> SUNBEAM SCHOOL AYODHYA • XI SCIENCE INNOVATION</p>
-        <h1>Turn a <em>speed breaker</em><br>into an energy generator.</h1>
-        <p class="lead">A hybrid student engineering model by <strong>Rudra Pandey</strong> and <strong>Devansh Pandey</strong> of <strong>XI Science, Sunbeam School Ayodhya</strong>. The prototype captures vehicle-induced motion using piezoelectric discs and a rack-and-pinion generator, stores the harvested energy, and demonstrates it with LED streetlights.</p><div class="creator-strip"><img src="assets/sunbeam-school-ayodhya.png" alt="Sunbeam School Ayodhya"><div><span>STUDENT INNOVATION</span><strong>Rudra Pandey × Devansh Pandey</strong><small>XI Science • Sunbeam School Ayodhya</small></div></div>
-        <div class="hero-actions">
-          <a class="btn primary" href="#working">Explore the system <b>→</b></a>
-          <a class="btn ghost" href="#build">Build guide</a>
+        <div class="eyebrow"><i></i> COMPUTER VISION • SECURITY</div>
+        <h1>HUMAN<span>GUARD</span><br>ROBOT</h1>
+        <p class="lead">A camera-based human detection robot that identifies a person in view and automatically sends a security notification — <strong>without a PIR or motion sensor.</strong></p>
+        <div class="actions">
+          <a class="primary" href="#working">Explore the system <span>↘</span></a>
+          <a class="secondary" href="#team">Meet the innovators</a>
         </div>
         <div class="hero-stats">
-          <div><strong data-count="2">0</strong><span>Generation methods</span></div>
-          <div><strong data-count="4">0</strong><span>Energy stages</span></div>
-          <div><strong data-count="3">0</strong><span>SDGs supported</span></div>
+          <div><b data-count="0">0</b><span>Motion sensors required</span></div>
+          <div><b>&lt;5s*</b><span>Target alert workflow</span></div>
+          <div><b>24/7</b><span>Security concept</span></div>
         </div>
       </div>
 
-      <div class="hero-machine reveal">
-        <div class="road-scene">
-          <div class="lamp l1"><i></i></div><div class="lamp l2"><i></i></div><div class="lamp l3"><i></i></div>
-          <div class="car">▰<span>◉</span><b>◉</b></div>
-          <div class="breaker"><i></i><i></i><i></i></div>
-          <div class="road-lines"></div>
-        </div>
-        <div class="machine-panel">
-          <span>LIVE MODEL</span>
-          <div class="meter"><small>ENERGY FLOW</small><b>MECHANICAL → ELECTRICAL</b></div>
-          <div class="pulse-line"></div>
-        </div>
-      </div>
-      <a class="scroll-hint" href="#overview"><span></span>SCROLL TO EXPLORE</a>
-    </section>
-
-
-    <section class="section school-section" id="school">
-      <div class="school-showcase reveal">
-        <div class="school-logo-panel">
-          <img src="assets/sunbeam-school-ayodhya.png" alt="Sunbeam School Ayodhya official branding">
-        </div>
-        <div class="school-copy">
-          <p class="eyebrow"><span></span> STUDENT INNOVATION</p>
-          <h2>Built at <em>Sunbeam School Ayodhya.</em></h2>
-          <p>This prototype brings mechanics, electronics, sustainability and practical problem-solving together in one working model developed by students of XI Science.</p>
-          <div class="student-names">
-            <article><small>PROJECT CREATOR</small><strong>Rudra Pandey</strong><span>XI Science</span></article>
-            <article><small>PROJECT CREATOR</small><strong>Devansh Pandey</strong><span>XI Science</span></article>
+      <div class="hero-visual reveal">
+        <div class="radar">
+          <div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div>
+          <div class="scan"></div>
+          <div class="person">
+            <div class="head"></div><div class="body"></div>
+            <div class="detect-box"><span>HUMAN DETECTED</span></div>
           </div>
-          <div class="school-values"><span>DUTY</span><i>•</i><span>DEVOTION</span><i>•</i><span>DISCIPLINE</span></div>
+          <div class="data d1">CAM_01<br><b>ACTIVE</b></div>
+          <div class="data d2">VISION<br><b>ONLINE</b></div>
+          <div class="data d3">ALERT<br><b>READY</b></div>
         </div>
+      </div>
+      <a class="scroll" href="#about">SCROLL TO DISCOVER <span>↓</span></a>
+    </section>
+
+    <section class="school reveal" id="about">
+      <div class="school-logo"><img src="sunbeam-school-ayodhya.png" alt="Sunbeam School Ayodhya and DHK Eduserve branding"></div>
+      <div>
+        <div class="eyebrow"><i></i> STUDENT INNOVATION • 2026</div>
+        <h2>Built at <span>Sunbeam School Ayodhya</span></h2>
+        <p>This security-surveillance prototype demonstrates how a tablet camera and computer vision can act as the robot's “eyes.” Instead of waiting for a conventional motion sensor to trigger, the system analyzes the camera view for a human and initiates a notification when a person is detected.</p>
+        <blockquote>“Duty • Devotion • Discipline” <small>— school values represented through purposeful innovation</small></blockquote>
       </div>
     </section>
 
-    <section class="section intro" id="overview">
+    <section class="problem">
       <div class="section-head reveal">
-        <p class="eyebrow"><span></span> 01 / THE IDEA</p>
-        <h2>Energy is usually <em>lost.</em><br>What if we harvested a little?</h2>
+        <div class="eyebrow"><i></i> THE IDEA</div>
+        <h2>Security that can <span>see.</span></h2>
+        <p>HumanGuard AI focuses on visual human detection, fast alerts and accessible surveillance.</p>
       </div>
-      <div class="intro-grid">
-        <div class="big-card reveal">
-          <div class="card-icon">↯</div>
-          <h3>The Problem</h3>
-          <p>Vehicles repeatedly apply force to road surfaces. A small educational speed-breaker model can demonstrate how part of that mechanical motion may be converted into electrical energy rather than simply dissipated.</p>
-        </div>
-        <div class="big-card reveal">
-          <div class="card-icon">⚙</div>
-          <h3>The Solution</h3>
-          <p>A spring-loaded plate moves when an RC car crosses it. Piezo discs respond to controlled flexing while a rack drives gears and a DC motor used as a generator. Their outputs are conditioned before storage.</p>
-        </div>
-        <div class="big-card reveal">
-          <div class="card-icon">⌁</div>
-          <h3>The Demonstration</h3>
-          <p>Stored energy is measured and then used for low-power LEDs. The model is about energy conversion and smart infrastructure—not a claim that a small prototype can power full-size streetlights.</p>
-        </div>
+      <div class="cards three">
+        <article class="card reveal"><em>01</em><div class="icon">◉</div><h3>Camera-first detection</h3><p>The tablet camera provides a live visual feed. The detection software checks frames for a human rather than relying on a dedicated motion sensor.</p></article>
+        <article class="card reveal"><em>02</em><div class="icon">⌁</div><h3>Automatic alert</h3><p>When the detection condition is met, the system can trigger a notification workflow so a connected device can inform the user.</p></article>
+        <article class="card reveal"><em>03</em><div class="icon">◇</div><h3>Practical surveillance</h3><p>The concept can support homes, school spaces, offices, restricted areas and other locations where quick awareness matters.</p></article>
       </div>
     </section>
 
-    <section class="section working" id="working">
+    <section class="working" id="working">
       <div class="section-head reveal">
-        <p class="eyebrow"><span></span> 02 / ENERGY FLOW</p>
-        <h2>One press. <em>Two generators.</em></h2>
-        <p>Follow the RC car's force through the complete system.</p>
-      </div>
-
-      <div class="flow reveal">
-        <div class="flow-node active"><b>01</b><i>🚙</i><strong>Vehicle Motion</strong><span>Car loads the movable plate</span></div>
-        <div class="connector"><i></i></div>
-        <div class="flow-node"><b>02</b><i>⇣</i><strong>Plate Movement</strong><span>Springs compress a few mm</span></div>
-        <div class="connector"><i></i></div>
-        <div class="flow-node dual"><b>03</b><i>⚡</i><strong>Hybrid Generation</strong><span>Piezo + motor generator</span></div>
-        <div class="connector"><i></i></div>
-        <div class="flow-node"><b>04</b><i>▣</i><strong>Rectification</strong><span>Condition generator output</span></div>
-        <div class="connector"><i></i></div>
-        <div class="flow-node"><b>05</b><i>◫</i><strong>Storage</strong><span>Capacitor / supercapacitor</span></div>
-        <div class="connector"><i></i></div>
-        <div class="flow-node"><b>06</b><i>💡</i><strong>Useful Output</strong><span>Low-power LED demonstration</span></div>
-      </div>
-
-      <div class="split">
-        <article class="tech-card reveal">
-          <span class="tag">METHOD A</span><div class="tech-visual piezo"><div></div><i>+</i><i>−</i></div>
-          <h3>Piezoelectric Harvesting</h3>
-          <p>Piezoelectric discs generate electrical pulses when they flex. Rubber or foam contacts help transfer controlled movement without crushing the ceramic.</p>
-          <ul><li>No rotating shaft required</li><li>Compact and easy to demonstrate</li><li>High voltage pulses, but low available energy</li></ul>
-        </article>
-        <article class="tech-card reveal">
-          <span class="tag">METHOD B</span><div class="tech-visual gears"><i>⚙</i><i>⚙</i><i>⚙</i></div>
-          <h3>Rack & Pinion Generation</h3>
-          <p>The moving plate drives a rack, rotating a pinion and gear train. The final gear spins a DC motor shaft so the motor acts as a small generator.</p>
-          <ul><li>Converts linear travel to rotation</li><li>Gear ratio can increase shaft speed</li><li>Bearings reduce friction and improve alignment</li></ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section components" id="components">
-      <div class="section-head reveal">
-        <p class="eyebrow"><span></span> 03 / HARDWARE</p>
-        <h2>Every component has <em>a job.</em></h2>
-      </div>
-      <div class="component-grid">
-        <article class="component reveal"><b>01</b><i>〰</i><h3>Compression Springs</h3><p>Support the plate, compress under vehicle load, and return it to its starting position.</p></article>
-        <article class="component reveal"><b>02</b><i>Ⅱ</i><h3>Guide Rods</h3><p>Keep the moving plate aligned and reduce unwanted sideways motion.</p></article>
-        <article class="component reveal"><b>03</b><i>⚡</i><h3>Piezo Discs</h3><p>Convert controlled mechanical deformation into small electrical pulses.</p></article>
-        <article class="component reveal"><b>04</b><i>⚙</i><h3>Rack + Pinion</h3><p>Converts the plate's short linear movement into rotational motion.</p></article>
-        <article class="component reveal"><b>05</b><i>◉</i><h3>Gear Train</h3><p>Transfers motion and can increase generator shaft speed using an appropriate ratio.</p></article>
-        <article class="component reveal"><b>06</b><i>⟳</i><h3>DC Motor</h3><p>Operated mechanically as a generator to convert shaft rotation into electrical output.</p></article>
-        <article class="component reveal"><b>07</b><i>◇</i><h3>Rectifier</h3><p>Provides suitable polarity/rectification before energy is sent toward storage.</p></article>
-        <article class="component reveal"><b>08</b><i>▥</i><h3>Capacitor</h3><p>Captures electrical energy and smooths the output for the demonstration load.</p></article>
-        <article class="component reveal"><b>09</b><i>▣</i><h3>DC-DC Module</h3><p>Conditions stored voltage when its operating range and the available energy permit.</p></article>
-        <article class="component reveal"><b>10</b><i>💡</i><h3>LED + Resistor</h3><p>Provides a visible low-power output. Each LED should use suitable current limiting.</p></article>
-        <article class="component reveal"><b>11</b><i>◫</i><h3>Voltage Display</h3><p>Shows storage voltage if the display can operate at the system's available voltage.</p></article>
-        <article class="component reveal"><b>12</b><i>━</i><h3>Base & Top Plate</h3><p>Create the structural road model and controlled moving speed-breaker mechanism.</p></article>
-      </div>
-    </section>
-
-    <section class="section build" id="build">
-      <div class="section-head reveal">
-        <p class="eyebrow"><span></span> 04 / BUILD PROCESS</p>
-        <h2>From empty board to <em>working prototype.</em></h2>
+        <div class="eyebrow"><i></i> SYSTEM WORKFLOW</div>
+        <h2>From camera frame to <span>alert.</span></h2>
       </div>
       <div class="timeline">
-        <article class="step reveal"><span>01</span><div><h3>Prepare the road base</h3><p>Use a strong board, create the road surface, and leave a central opening for the movable speed-breaker assembly.</p></div></article>
-        <article class="step reveal"><span>02</span><div><h3>Install guide rods and springs</h3><p>Fix guide rods vertically, place four springs under the plate, and restrict travel to only a few millimeters.</p></div></article>
-        <article class="step reveal"><span>03</span><div><h3>Mount piezo discs safely</h3><p>Use controlled rubber/foam contact points. Never let the plate directly crush the ceramic discs.</p></div></article>
-        <article class="step reveal"><span>04</span><div><h3>Test the piezo section first</h3><p>Rectify the output, connect a suitable capacitor, and verify a voltage change with a multimeter before adding more systems.</p></div></article>
-        <article class="step reveal"><span>05</span><div><h3>Add rack, pinion and gears</h3><p>Attach the rack to the moving plate, mesh it with the pinion, support shafts with bearings, and align the gear train.</p></div></article>
-        <article class="step reveal"><span>06</span><div><h3>Connect and test the generator</h3><p>Drive the DC motor shaft mechanically and test its output independently before combining energy paths.</p></div></article>
-        <article class="step reveal"><span>07</span><div><h3>Add storage and LED load</h3><p>Observe capacitor polarity and voltage ratings. Keep the LEDs switched off while harvesting, then use stored energy for the demonstration.</p></div></article>
-        <article class="step reveal"><span>08</span><div><h3>Run the RC-car demonstration</h3><p>Drive over the breaker repeatedly, observe mechanical movement and stored voltage, stop the car, then switch on the LEDs.</p></div></article>
+        <div class="line"><div id="lineFill"></div></div>
+        <article class="step reveal"><b>01</b><div><h3>Capture</h3><p>The tablet camera continuously supplies frames of the area in front of the robot.</p></div><span>CAMERA</span></article>
+        <article class="step reveal"><b>02</b><div><h3>Analyze</h3><p>Computer-vision logic processes the incoming image and searches for human features / a person class.</p></div><span>VISION</span></article>
+        <article class="step reveal"><b>03</b><div><h3>Detect</h3><p>Once confidence passes the configured threshold, the software confirms a human detection event.</p></div><span>AI LOGIC</span></article>
+        <article class="step reveal"><b>04</b><div><h3>Notify</h3><p>The event triggers the project's communication layer to send an alert to the configured device.</p></div><span>ALERT</span></article>
+        <article class="step reveal"><b>05</b><div><h3>Respond</h3><p>The user can check the situation and take an appropriate action, improving awareness without constant manual monitoring.</p></div><span>USER</span></article>
       </div>
+      <p class="note reveal">*Actual detection speed, accuracy and notification delay depend on the software model, lighting, camera, network and device configuration used in the physical prototype.</p>
+    </section>
 
-      <div class="circuit reveal">
-        <div>
-          <p class="eyebrow"><span></span> SYSTEM LOGIC</p>
-          <h3>Electrical architecture</h3>
-          <p>Build and verify each generation branch separately. Combining different sources requires appropriate rectification/isolation rather than directly tying arbitrary outputs together.</p>
-        </div>
-        <div class="circuit-map">
-          <span>PIEZO</span><b>→</b><span>RECTIFIER</span><b>↘</b>
-          <span class="storage">STORAGE</span><b>→</b><span>DC-DC*</span><b>→</b><span>SWITCH</span><b>→</b><span>LEDs</span>
-          <span class="motor">MOTOR GEN.</span><b>→</b><span>RECTIFY / ISOLATE</span><b>↗</b>
-        </div>
+    <section id="components">
+      <div class="section-head reveal">
+        <div class="eyebrow"><i></i> BUILD ARCHITECTURE</div>
+        <h2>What powers the <span>prototype?</span></h2>
+      </div>
+      <div class="components">
+        <article class="component reveal"><span>01</span><h3>Tablet + Camera</h3><p>Acts as the vision input and can also host the human-detection interface/software.</p><small>VISION INPUT</small></article>
+        <article class="component reveal"><span>02</span><h3>Robot Chassis</h3><p>Provides the physical platform for mounting the tablet, electronics and mobility hardware.</p><small>STRUCTURE</small></article>
+        <article class="component reveal"><span>03</span><h3>Controller</h3><p>A microcontroller or onboard control unit can coordinate motors and other electronic actions in the robot.</p><small>CONTROL</small></article>
+        <article class="component reveal"><span>04</span><h3>Motor Driver + Motors</h3><p>Handles movement when mobility is part of the prototype, separating motor power control from logic.</p><small>MOTION</small></article>
+        <article class="component reveal"><span>05</span><h3>Connectivity</h3><p>Wi‑Fi/Bluetooth or the tablet's network connection can carry detection events to the alert system.</p><small>COMMUNICATION</small></article>
+        <article class="component reveal"><span>06</span><h3>Power System</h3><p>Battery, regulated supply, wiring and switches provide stable power to the robot's hardware.</p><small>ENERGY</small></article>
       </div>
     </section>
 
-    <section class="section efficiency" id="efficiency">
-      <div class="section-head reveal">
-        <p class="eyebrow"><span></span> 05 / ENGINEERING REALITY</p>
-        <h2>Efficiency means reducing <em>every avoidable loss.</em></h2>
-      </div>
-      <div class="eff-grid">
-        <div class="eff-card reveal"><strong>↓</strong><h3>Reduce friction</h3><p>Align gears and use bearings so less mechanical input is lost as friction.</p></div>
-        <div class="eff-card reveal"><strong>↔</strong><h3>Optimize travel</h3><p>Use enough plate movement to activate both mechanisms without making the obstacle excessive.</p></div>
-        <div class="eff-card reveal"><strong>⚙</strong><h3>Tune the gear ratio</h3><p>Balance rotational speed against torque. More speed is not automatically more useful output.</p></div>
-        <div class="eff-card reveal"><strong>⚡</strong><h3>Minimize electrical loss</h3><p>Use suitable rectification and efficient conversion electronics matched to the low-energy source.</p></div>
-      </div>
-      <div class="reality reveal">
-        <div><span>IMPORTANT</span><h3>Prototype ≠ power plant.</h3></div>
-        <p>Piezo discs can show noticeable voltage while delivering little current. Large supercapacitors may therefore charge very slowly. Measure actual stored energy and treat the model as an energy-harvesting demonstration rather than claiming unrealistic streetlight-scale output.</p>
+    <section class="architecture">
+      <div class="section-head reveal"><div class="eyebrow"><i></i> DATA FLOW</div><h2>A simple, explainable <span>pipeline.</span></h2></div>
+      <div class="flow reveal">
+        <div><b>01</b><strong>LIVE VIDEO</strong><small>Tablet camera</small></div><i>→</i>
+        <div><b>02</b><strong>FRAME ANALYSIS</strong><small>Vision model</small></div><i>→</i>
+        <div><b>03</b><strong>PERSON FOUND</strong><small>Threshold check</small></div><i>→</i>
+        <div><b>04</b><strong>EVENT TRIGGER</strong><small>Software logic</small></div><i>→</i>
+        <div><b>05</b><strong>NOTIFICATION</strong><small>Connected device</small></div>
       </div>
     </section>
 
-    <section class="section impact" id="impact">
+    <section class="impact" id="impact">
       <div class="section-head reveal">
-        <p class="eyebrow"><span></span> 06 / PEOPLE & PLANET</p>
-        <h2>Why this project <em>matters.</em></h2>
+        <div class="eyebrow"><i></i> SOCIAL IMPACT</div>
+        <h2>Technology designed to <span>help people.</span></h2>
       </div>
-      <div class="impact-grid">
-        <article class="impact-main reveal">
-          <h3>Potential benefits</h3>
-          <div><b>01</b><span><strong>Education</strong>Shows energy conversion, mechanics, electronics, storage and efficiency in one physical system.</span></div>
-          <div><b>02</b><span><strong>Low-power sensing</strong>The broader concept can inspire systems where harvested energy supports sensors, counters or indicators.</span></div>
-          <div><b>03</b><span><strong>Smart-road research</strong>Encourages thinking about infrastructure that measures, manages and recovers otherwise dissipated energy.</span></div>
-          <div><b>04</b><span><strong>Sustainability awareness</strong>Makes energy losses visible and gives students a platform to test improvements quantitatively.</span></div>
-        </article>
-        <div class="sdgs reveal">
-          <h3>SDG Alignment</h3>
-          <article><b>07</b><div><strong>Affordable & Clean Energy</strong><p>Explores small-scale energy harvesting and efficient use of generated electricity.</p></div></article>
-          <article><b>09</b><div><strong>Industry, Innovation & Infrastructure</strong><p>Demonstrates an experimental approach to smarter infrastructure.</p></div></article>
-          <article><b>11</b><div><strong>Sustainable Cities & Communities</strong><p>Connects road infrastructure, low-power applications and sustainability education.</p></div></article>
+      <div class="cards three">
+        <article class="card reveal"><h3>🏠 Home awareness</h3><p>Can alert residents when a person is visually detected near a monitored area, supporting quicker awareness.</p></article>
+        <article class="card reveal"><h3>🏫 School security</h3><p>Demonstrates how computer vision can assist supervision of entrances, labs or restricted spaces.</p></article>
+        <article class="card reveal"><h3>🏢 Workplace monitoring</h3><p>A scalable concept for observing selected areas where continuous human presence monitoring may be useful.</p></article>
+      </div>
+      <div class="ethics reveal"><strong>Responsible AI matters.</strong><p>A real deployment should use clear consent and signage where appropriate, minimize stored footage, secure notifications and device access, and comply with applicable privacy rules. Human detection should support people—not replace responsible human judgment.</p></div>
+    </section>
+
+    <section class="sdg">
+      <div class="section-head reveal"><div class="eyebrow"><i></i> UN SUSTAINABLE DEVELOPMENT GOALS</div><h2>Aligned with meaningful <span>innovation.</span></h2></div>
+      <div class="sdg-grid">
+        <article class="sdg-card reveal"><b>09</b><div><h3>Industry, Innovation & Infrastructure</h3><p>Explores accessible computer vision, connected devices and student-built security technology.</p></div></article>
+        <article class="sdg-card reveal"><b>11</b><div><h3>Sustainable Cities & Communities</h3><p>Smart monitoring concepts can contribute to safer, more responsive built environments.</p></div></article>
+        <article class="sdg-card reveal"><b>16</b><div><h3>Peace, Justice & Strong Institutions</h3><p>Responsible security tools can support safer spaces when used transparently and ethically.</p></div></article>
+      </div>
+    </section>
+
+    <section class="efficiency">
+      <div class="section-head reveal"><div class="eyebrow"><i></i> DESIGN ADVANTAGES</div><h2>Why this approach is <span>efficient.</span></h2></div>
+      <div class="meter-grid">
+        <div class="meter reveal"><div class="ring" style="--p:92"><b>VISUAL</b></div><h3>Camera-centric</h3><p>Uses the existing camera as the primary sensing input, reducing dependence on a separate PIR trigger.</p></div>
+        <div class="meter reveal"><div class="ring" style="--p:86"><b>SMART</b></div><h3>Selective events</h3><p>Detection logic can be configured around humans rather than treating every physical movement as equivalent.</p></div>
+        <div class="meter reveal"><div class="ring" style="--p:89"><b>MODULAR</b></div><h3>Expandable</h3><p>The concept can later add event logs, snapshots, multiple cameras, dashboards or autonomous patrol functions.</p></div>
+      </div>
+    </section>
+
+    <section class="team" id="team">
+      <div class="team-inner reveal">
+        <div class="eyebrow"><i></i> THE INNOVATORS</div>
+        <h2>Created by students of <span>XI Science.</span></h2>
+        <div class="names">
+          <article><div class="avatar">RP</div><h3>Rudra Pandey</h3><p>Student Innovator • XI Science</p></article>
+          <div class="x">×</div>
+          <article><div class="avatar">DP</div><h3>Devansh Pandey</h3><p>Student Innovator • XI Science</p></article>
         </div>
-      </div>
-    </section>
-
-    <section class="section future">
-      <div class="future-bg"></div>
-      <div class="section-head reveal">
-        <p class="eyebrow"><span></span> 07 / NEXT ITERATION</p>
-        <h2>Build it. Measure it.<br><em>Then make it better.</em></h2>
-      </div>
-      <div class="future-list reveal">
-        <span>01</span><p><b>Sensor telemetry</b> — log voltage, crossing count and energy over time with a microcontroller.</p>
-        <span>02</span><p><b>Better mechanics</b> — test gear ratios, spring stiffness and plate travel experimentally.</p>
-        <span>03</span><p><b>Energy comparison</b> — measure piezo and electromagnetic branches separately to compare performance.</p>
-        <span>04</span><p><b>Automatic lighting</b> — add a light sensor and only use stored energy when illumination is needed.</p>
+        <div class="school-lockup"><img src="sunbeam-school-ayodhya.png" alt="Sunbeam School Ayodhya"><div><strong>SUNBEAM SCHOOL AYODHYA</strong><small>Duty • Devotion • Discipline</small></div></div>
       </div>
     </section>
   </main>
 
   <footer>
-    <a class="brand school-brand" href="#home"><img src="assets/sunbeam-school-ayodhya.png" alt="Sunbeam School Ayodhya logo"><span><b>SUNBEAM</b><small>SCHOOL AYODHYA</small></span></a>
-    <p><strong>Hybrid Energy-Generating Smart Speed Breaker</strong><br>Rudra Pandey &amp; Devansh Pandey • XI Science • Sunbeam School Ayodhya</p>
+    <div><strong>HUMANGUARD<span>AI</span></strong><p>Camera-based human detection security robot.</p></div>
+    <div><p>Rudra Pandey & Devansh Pandey</p><p>XI Science • Sunbeam School Ayodhya</p></div>
     <a href="#home">BACK TO TOP ↑</a>
   </footer>
 
